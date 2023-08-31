@@ -1,24 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta name="viewport" content="initial-scale=1.0" />
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
-    <link rel="stylesheet" href="styles/style.css">
-    <title>web1-310823-1611</title>
-</head>
-<body>
-    <div id="container">
-        <div id="header">
-            <p>web1-310823-1611</p>
-            <p>by Afanasyev Kirill Aleksandrovich, group no. P3206</p>
-            <p>Variant no. 1611</p>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <link rel="stylesheet" href="styles/style.css">
+        <title>web1-310823-1611</title>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <p>web1-310823-1611</p>
+                <p>by Afanasyev Kirill Aleksandrovich, group no. P3206</p>
+                <p>Variant no. 1611</p>
+            </div>
+            <div id="main">
+                <div id="choose">
+                    <p>Enter parameters:</p>
+                    <form action="actions/check-hit.php" method="get">
+                        <div id="x-select-container">
+                            <label for="x-select">Choose X:</label>
+                            <select name="x-select" id="x-select">
+                                <option value="">-- Please choose an option--</option>
+                                <option value="-4">-4</option>
+                                <option value="-3">-3</option>
+                                <option value="-2">-2</option>
+                                <option value="-1">-1</option>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div id="y-select-container">
+                            <label for="y-select">Enter Y:</label>
+                            <input type="text" name="y-select" id="y-select" />
+                        </div>
+                        <div id="z-select-container">
+                            <label for="z-select">Enter Z:</label>
+                            <input type="text" name="z-select" id="z-select" />
+                        </div>
+                        <div id="submit-container">
+                            <input type="submit">
+                        </div>
+                    </form>
+                </div>
+                <div id="graph">
+                    graph
+                </div>
+            </div>
+            <div id="footer">
+                <p>Copyright © Zerumi, 2023. Licensed under ISC license. Plagiarism is prohibited.</p>
+            </div>
         </div>
-        <div id="main">
-            main
-        </div>
-        <div id="footer">
-            <p>Copyright © Zerumi, 2023. Licensed under ISC license. Plagiarism is prohibited.</p>
-        </div>
-    </div>
-</body>
+    </body>
 </html>

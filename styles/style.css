@@ -36,6 +36,19 @@ div {
     border: solid 2px black;
 }
 
+#choose {
+    float: left;
+    width: calc(50% - 4px);
+    background-color: #00ffb7;
+    border: solid 2px black;
+}
+
+#graph {
+    margin-left: calc(50% + 4px);
+    background-color: #00ffb7;
+    border: solid 2px black;
+}
+
 #footer {
     & p {
         margin: auto;
