@@ -1,0 +1,47 @@
+html, body {
+    font-family: "Fira", serif;
+    height: calc(100% - 2px);
+    margin: 0;
+}
+
+div {
+    margin: 2px;
+}
+
+#container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#header {
+    & p {
+        margin: auto;
+    }
+
+    /* setup font in header by task */
+    font-family: serif;
+    color: #2f2f2f;
+    font-size: 16px;
+
+    height: fit-content; /* auto size for header */
+    background-color: blanchedalmond;
+    border: solid 2px black;
+}
+
+#main {
+    flex: 1;
+    overflow: auto;
+    background-color: #00ffb7;
+    border: solid 2px black;
+}
+
+#footer {
+    & p {
+        margin: auto;
+    }
+
+    height: fit-content; /* also for footer */
+    background-color: blanchedalmond;
+    border: solid 2px black;
+}
