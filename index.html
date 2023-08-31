@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <title>web1-310823-1611</title>
+        <style>
+            html, body {
+                height: calc(100% - 2px);
+                margin: 0;
+            }
+            div {
+                margin: 2px;
+            }
+            #container {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+            #header {
+                & p {
+                    margin: auto;
+                }
+                height: fit-content;
+                background-color: blanchedalmond;
+                border: solid 2px black;
+            }
+            #main {
+                flex: 1;
+                overflow: auto;
+                background-color: #00ffb7;
+                border: solid 2px black;
+            }
+            #footer {
+                & p {
+                    margin: auto;
+                }
+                height: fit-content;
+                background-color: blanchedalmond;
+                border: solid 2px black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="header">
+                <p>web1-310823-1611</p>
+                <p>by Afanasyev Kirill Aleksandrovich, group no. P3206</p>
+                <p>Variant no. 1611</p>
+            </div>
+            <div id="main">
+                main
+            </div>
+            <div id="footer">
+                <p>Copyright © Zerumi, 2023. Licensed under ISC license. Plagiarism is prohibited.</p>
+            </div>
+        </div>
+    </body>
+</html>
