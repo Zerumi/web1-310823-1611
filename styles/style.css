@@ -1,11 +1,40 @@
 html, body {
+    background-image: url("../images/128744.jpg");
+    background-size: cover;
     font-family: "Fira", serif;
-    height: calc(100% - 2px);
+    height: 100%;
     margin: 0;
 }
 
 div {
     margin: 2px;
+}
+
+p {
+    margin: 0.5em;
+}
+
+table {
+    border: solid 2px black;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: solid 1px black;
+    padding: 3px;
+}
+
+.select-container {
+    width: calc(100% - 10px);
+    display: flex;
+    overflow: auto;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.blured_container {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 #container {
@@ -19,33 +48,36 @@ div {
         margin: auto;
     }
 
+    padding: 5px;
+
+    box-shadow: 0 -20px 100px black ;
+
     /* setup font in header by task */
     font-family: serif;
     color: #2f2f2f;
     font-size: 16px;
 
     height: fit-content; /* auto size for header */
-    background-color: blanchedalmond;
-    border: solid 2px black;
+    background-color: rgba(255, 235, 205, 0.2);
+    /* border: solid 2px black; */
 }
 
 #main {
     flex: 1;
     overflow: auto;
-    background-color: #00ffb7;
-    border: solid 2px black;
+    /* background-color: #00ffb7;
+    border: solid 2px black; */
 }
 
 #choose {
     float: left;
     width: calc(50% - 4px);
-    background-color: #00ffb7;
     border: solid 2px black;
+    background-color: #d5d5d570;
 }
 
 #graph {
     margin-left: calc(50% + 4px);
-    background-color: #00ffb7;
     border: solid 2px black;
 }
 
@@ -54,7 +86,13 @@ div {
         margin: auto;
     }
 
+    padding: 5px;
+
     height: fit-content; /* also for footer */
     background-color: blanchedalmond;
     border: solid 2px black;
+}
+
+#result_table {
+    padding: 2px;
 }
