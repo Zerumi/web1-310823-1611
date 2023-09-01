@@ -10,7 +10,7 @@ html, body {
     background-image: url("../images/128744.jpg");
     background-size: cover;
     font-family: "Fira", serif;
-    height: 100%;
+    height: calc(100% - 2px);
     margin: 0;
 }
 
@@ -35,6 +35,29 @@ table {
 th, td {
     border: solid 1px black;
     padding: 3px;
+}
+
+select {
+    padding: 2px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 black;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #F0D6A3;
+    border: solid 1px black;
+    border-radius: 4px;
+    color: black;
+    text-decoration: none;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    padding: 2px;
+    background-color: #d7d7d7;
+    border: solid 1px black;
+    border-radius: 2px;
 }
 
 .select-container {
@@ -120,29 +143,6 @@ th, td {
     padding: 2px;
     width: fit-content;
     height: fit-content;
-}
-
-select {
-    padding: 2px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 0 black;
-}
-
-input[type=button], input[type=submit], input[type=reset] {
-    background-color: #F0D6A3;
-    border: solid 1px black;
-    border-radius: 4px;
-    color: black;
-    text-decoration: none;
-    padding: 2px 6px;
-    cursor: pointer;
-}
-
-input[type=text] {
-    padding: 2px;
-    background-color: #d7d7d7;
-    border: solid 1px black;
-    border-radius: 2px;
 }
 
 #submit-container {
