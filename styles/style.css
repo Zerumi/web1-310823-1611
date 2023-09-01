@@ -1,3 +1,11 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     background-image: url("../images/128744.jpg");
     background-size: cover;
@@ -8,6 +16,11 @@ html, body {
 
 div {
     margin: 2px;
+}
+
+form {
+    width: 100%;
+    margin-bottom: 2%;
 }
 
 p {
@@ -25,10 +38,12 @@ th, td {
 }
 
 .select-container {
-    width: calc(100% - 10px);
+    margin-left: 0.5em;
     display: flex;
     overflow: auto;
     flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 4px;
     justify-content: space-between;
 }
 
@@ -63,22 +78,28 @@ th, td {
 }
 
 #main {
+    display: flex;
+    flex-wrap: wrap;
     flex: 1;
     overflow: auto;
+    align-content: flex-start;
     /* background-color: #00ffb7;
     border: solid 2px black; */
 }
 
 #choose {
     float: left;
-    width: calc(50% - 4px);
+    width: fit-content;
     border: solid 2px black;
     background-color: #d5d5d570;
+    height: fit-content;
 }
 
 #graph {
-    margin-left: calc(50% + 4px);
+    display: flex;
     border: solid 2px black;
+    height: fit-content;
+    width: fit-content;
 }
 
 #footer {
@@ -86,13 +107,46 @@ th, td {
         margin: auto;
     }
 
+    color: #CCCCCC;
+
     padding: 5px;
 
     height: fit-content; /* also for footer */
-    background-color: blanchedalmond;
-    border: solid 2px black;
+    background-color: rgba(255, 235, 205, 0.2);
+    /* border: solid 2px black; */
 }
 
 #result_table {
     padding: 2px;
+    width: fit-content;
+    height: fit-content;
+}
+
+select {
+    padding: 2px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 black;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #F0D6A3;
+    border: solid 1px black;
+    border-radius: 4px;
+    color: black;
+    text-decoration: none;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    padding: 2px;
+    background-color: #d7d7d7;
+    border: solid 1px black;
+    border-radius: 2px;
+}
+
+#submit-container {
+    padding: 0 4px;
+    display: flex;
+    justify-content: right;
 }
