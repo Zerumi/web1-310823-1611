@@ -11,7 +11,6 @@ html, body {
     background-size: cover;
     font-family: "Fira", serif;
     height: calc(100% - 1px);
-    margin: 0;
 }
 
 div {
@@ -21,6 +20,29 @@ div {
 form {
     width: 100%;
     margin-bottom: 2%;
+}
+
+select {
+    padding: 2px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 0 black;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #F0D6A3;
+    border: solid 1px black;
+    border-radius: 4px;
+    color: black;
+    text-decoration: none;
+    padding: 2px 6px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    padding: 2px;
+    background-color: #d7d7d7;
+    border: solid 1px black;
+    border-radius: 2px;
 }
 
 p {
@@ -47,12 +69,12 @@ th, td {
     justify-content: space-between;
 }
 
-.round_container {
+.round-container {
     border: solid 2px black;
     border-radius: 4px;
 }
 
-.blured_container {
+.blured-container {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -96,10 +118,22 @@ th, td {
     height: fit-content;
 }
 
+#submit-container {
+    padding: 0 4px;
+    display: flex;
+    justify-content: right;
+}
+
 #graph {
     display: flex;
     height: fit-content;
     width: fit-content;
+}
+
+#result-table {
+    padding: 2px;
+    width: fit-content;
+    height: fit-content;
 }
 
 #footer {
@@ -113,39 +147,4 @@ th, td {
 
     height: fit-content; /* also for footer */
     background-color: rgba(255, 235, 205, 0.2);
-}
-
-#result_table {
-    padding: 2px;
-    width: fit-content;
-    height: fit-content;
-}
-
-select {
-    padding: 2px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 0 black;
-}
-
-input[type=button], input[type=submit], input[type=reset] {
-    background-color: #F0D6A3;
-    border: solid 1px black;
-    border-radius: 4px;
-    color: black;
-    text-decoration: none;
-    padding: 2px 6px;
-    cursor: pointer;
-}
-
-input[type=text] {
-    padding: 2px;
-    background-color: #d7d7d7;
-    border: solid 1px black;
-    border-radius: 2px;
-}
-
-#submit-container {
-    padding: 0 4px;
-    display: flex;
-    justify-content: right;
 }
