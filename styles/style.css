@@ -10,7 +10,7 @@ html, body {
     background-image: url("../images/128744.jpg");
     background-size: cover;
     font-family: "Fira", serif;
-    height: 100%;
+    height: calc(100% - 1px);
     margin: 0;
 }
 
@@ -47,6 +47,11 @@ th, td {
     justify-content: space-between;
 }
 
+.round_container {
+    border: solid 2px black;
+    border-radius: 4px;
+}
+
 .blured_container {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -74,7 +79,6 @@ th, td {
 
     height: fit-content; /* auto size for header */
     background-color: rgba(255, 235, 205, 0.2);
-    /* border: solid 2px black; */
 }
 
 #main {
@@ -83,21 +87,17 @@ th, td {
     flex: 1;
     overflow: auto;
     align-content: flex-start;
-    /* background-color: #00ffb7;
-    border: solid 2px black; */
 }
 
 #choose {
     float: left;
     width: fit-content;
-    border: solid 2px black;
     background-color: #d5d5d570;
     height: fit-content;
 }
 
 #graph {
     display: flex;
-    border: solid 2px black;
     height: fit-content;
     width: fit-content;
 }
@@ -113,7 +113,6 @@ th, td {
 
     height: fit-content; /* also for footer */
     background-color: rgba(255, 235, 205, 0.2);
-    /* border: solid 2px black; */
 }
 
 #result_table {
