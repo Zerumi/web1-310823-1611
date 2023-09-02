@@ -92,7 +92,9 @@ th, td {
 
     padding: 5px;
 
-    box-shadow: 0 -20px 100px black ;
+    box-shadow: 0 -20px 100px black;
+
+    overflow: auto;
 
     /* setup font in header by task */
     font-family: serif;
@@ -140,6 +142,8 @@ th, td {
     & p {
         margin: auto;
     }
+
+    overflow: auto;
 
     color: #CCCCCC;
 
