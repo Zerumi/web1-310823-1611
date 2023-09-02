@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: design gm ver">
+    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="chore: project structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
@@ -98,15 +98,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693505801007</updated>
     </task>
-    <task id="LOCAL-00004" summary="feat: design gm ver">
-      <option name="closed" value="true" />
-      <created>1693582494399</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1693582494399</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,7 +109,6 @@
     <MESSAGE value="feat: site frame" />
     <MESSAGE value="chore: project structure" />
     <MESSAGE value="feat: new designs" />
-    <MESSAGE value="feat: design gm ver" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: design gm ver" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: new designs" />
   </component>
 </project>
