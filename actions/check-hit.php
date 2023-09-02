@@ -1,5 +1,7 @@
 <?php
 
+// todo: check for ability to cast to a numeric type!!!
+
 error_reporting(-1);
 
 $response = $x = $y = $r = $executed_at = $execution_time = $result = "";

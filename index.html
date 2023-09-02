@@ -16,10 +16,11 @@
             <div id="main">
                 <div id="choose" class="blured-container round-container">
                     <p>Enter parameters:</p>
+                    <p><i>Notice!</i> Every parameter should be filled!</p>
                     <form action="actions/check-hit.php" method="get">
                         <div id="x-select-container" class="select-container">
                             <label for="x-select">Choose X:</label>
-                            <select name="x-select" id="x-select">
+                            <select name="x-select" id="x-select" required>
                                 <option value="">-- Please choose an option--</option>
                                 <option value="-4">-4</option>
                                 <option value="-3">-3</option>
@@ -34,11 +35,11 @@
                         </div>
                         <div id="y-select-container" class="select-container">
                             <label for="y-select">Enter Y:</label>
-                            <input type="text" name="y-select" id="y-select" />
+                            <input type="text" name="y-select" id="y-select" required />
                         </div>
                         <div id="z-select-container" class="select-container">
                             <label for="r-select">Enter R:</label>
-                            <input type="text" name="r-select" id="r-select" />
+                            <input type="text" name="r-select" id="r-select" required />
                         </div>
                         <div id="submit-container">
                             <input type="submit" id="submit-button">
@@ -67,7 +68,7 @@
                 </div>
             </div>
             <div id="footer" class="blured-container round-container">
-                <p>Copyright © Zerumi, 2023. Licensed under ISC license. Plagiarism is prohibited.</p>
+                <p>Copyright © Zerumi, 2023. Licensed under <a href="LICENSE">ISC license</a>. Plagiarism is prohibited.</p>
             </div>
         </div>
     </body>

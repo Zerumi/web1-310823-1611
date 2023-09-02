@@ -25,7 +25,31 @@ form {
 select {
     padding: 2px;
     border-radius: 4px;
-    box-shadow: 1px 1px 0 black;
+    border: solid 1px black;
+}
+
+a:link {
+    color: #00ffe9;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #e289ff;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff8484;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ffff78;
+    background-color: transparent;
+    text-decoration: underline;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
