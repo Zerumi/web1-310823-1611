@@ -186,7 +186,7 @@ th, td {
     justify-content: right;
 }
 
-#graph {
+#graph-container {
     display: flex;
     height: fit-content;
     width: fit-content;

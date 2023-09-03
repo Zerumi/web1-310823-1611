@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
     <head>
         <meta name="viewport" content="initial-scale=1.0" />
         <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
@@ -36,24 +36,26 @@
                         <div id="y-select-container" class="select-container margin">
                             <label for="y-select">Enter Y:</label>
                             <div id="y-select-input" class="select-input-container">
-                                <input type="text" name="y-select" id="y-select" required />
+                                <input type="text" name="y-select" id="y-select"
+                                       placeholder="Should be in range [-5; 3]" required />
                                 <span class="error" aria-live="polite"></span>
                             </div>
                         </div>
                         <div id="r-select-container" class="select-container margin">
                             <label for="r-select">Enter R:</label>
                             <div id="r-select-input" class="select-input-container">
-                                <input type="text" name="r-select" id="r-select" required />
+                                <input type="text" name="r-select" id="r-select"
+                                       placeholder="Should be in range [2; 5]"required />
                                 <span class="error" aria-live="polite"></span>
                             </div>
                         </div>
                         <div id="submit-container" class="margin">
-                            <input type="submit" id="submit-button">
+                            <input type="submit" id="submit-button" value="Get disappointed in your life">
                         </div>
                     </form>
                 </div>
-                <div id="graph" class="blured-container round-container margin">
-                    <canvas>
+                <div id="graph-container" class="blured-container round-container margin">
+                    <canvas id="graph">
 
                     </canvas>
                 </div>
@@ -80,5 +82,6 @@
         <script src="scripts/validation.js"></script>
         <script src="scripts/get-data.js"></script>
         <script src="scripts/add-to-table.js"></script>
+        <script src="scripts/graph.js"></script>
     </body>
 </html>
