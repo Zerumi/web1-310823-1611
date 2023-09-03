@@ -6,10 +6,10 @@ const y_error = y_select.nextElementSibling;
 const r_error = r_select.nextElementSibling;
 
 window.addEventListener("load", () => {
-    const isValidY = y_select.value.length === 0 || Number.isNaN(+y_select.value);
+    const isValidY = y_select.value.length === 0 || !Number.isNaN(+y_select.value);
     y_select.className = isValidY ? "valid" : "invalid";
 
-    const isValidR = y_select.value.length === 0 || Number.isNaN(+r_select.value);
+    const isValidR = y_select.value.length === 0 || !Number.isNaN(+r_select.value);
     r_select.className = isValidR ? "valid" : "invalid";
 });
 
@@ -18,7 +18,7 @@ y_select.addEventListener("input", () => {
     const y = +y_select.value;
 
     const isValid = y_select.value.length === 0 || y_select.value === "-"
-        || (Number.isNaN(y) && y >= -5 && y <= 3);
+        || (!Number.isNaN(y) && y >= -5 && y <= 3);
     if (isValid) {
         y_select.className = "valid";
         y_error.textContent = "";
@@ -32,7 +32,7 @@ r_select.addEventListener("input", () => {
     const r = +r_select.value;
 
     const isValid = r_select.value.length === 0 || y_select.value === "-"
-        || (Number.isNaN(r) && r >= 2 && r <= 5);
+        || (!Number.isNaN(r) && r >= 2 && r <= 5);
     if (isValid) {
         r_select.className = "valid";
         r_error.textContent = "";
@@ -50,7 +50,7 @@ form.addEventListener("submit", (event) => {
     // no default sending data to form (it will be done using xmlhttp if js is activated)
     event.preventDefault();
 
-    const isValidY = y_select.value.length === 0 || Number.isNaN(y);
+    const isValidY = y_select.value.length === 0 || !Number.isNaN(y);
     const isAcceptableY = y >= -5 && y <= 3;
     if (!isValidY) {
         y_select.className = "invalid";
@@ -66,7 +66,7 @@ form.addEventListener("submit", (event) => {
         y_error.className = "error";
     }
 
-    const isValidR = r_select.value.length === 0 || Number.isNaN(r);
+    const isValidR = r_select.value.length === 0 || !Number.isNaN(r);
     const isAcceptableR = r >= 2 && r <= 5;
     if (!isValidR) {
         r_select.className = "invalid";
