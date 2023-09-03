@@ -6,22 +6,22 @@ $response = $x = $y = $r = $executed_at = $execution_time = $result = "";
 
 $start_exec = microtime(1);
 
-function check_x($x)
+function check_x($x): bool
 {
     return $x >= -4 and $x <= 4;
 }
 
-function check_y($y)
+function check_y($y): bool
 {
     return $y >= -5 and $y <= 3;
 }
 
-function check_r($r)
+function check_r($r): bool
 {
     return $r >= 2 and $r <= 5;
 }
 
-function check_hit($x, $y, $r)
+function check_hit($x, $y, $r): string
 {
     // check 1-st section - square
     if ($x > 0 and $y > 0 and $x < $r and $y < $r) return "Попадание";
