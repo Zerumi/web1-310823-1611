@@ -192,7 +192,7 @@ th, td {
     width: fit-content;
 }
 
-#result-table {
+#result-table-container {
     padding: 2px;
     width: fit-content;
     height: fit-content;

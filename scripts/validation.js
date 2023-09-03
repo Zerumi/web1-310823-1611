@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const x_select = document.getElementById("x-select");
 const y_select  = document.getElementById("y-select");
 const r_select = document.getElementById("r-select");
+
 const y_error = y_select.nextElementSibling;
 const r_error = r_select.nextElementSibling;
 
