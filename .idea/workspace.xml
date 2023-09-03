@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: validation part 2">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="fix: regex optimization (thanks to @owlfromhogvarts)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validation.js" afterDir="false" />
     </list>
@@ -84,7 +83,7 @@
       <workItem from="1693504761623" duration="3439000" />
       <workItem from="1693509448964" duration="5654000" />
       <workItem from="1693515509025" duration="2020000" />
-      <workItem from="1693757530784" duration="3229000" />
+      <workItem from="1693757530784" duration="3663000" />
     </task>
     <task id="LOCAL-00001" summary="site frame">
       <option name="closed" value="true" />
@@ -142,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693760106584</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: regex optimization (thanks to @owlfromhogvarts)">
+      <option name="closed" value="true" />
+      <created>1693760954634</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1693760954634</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,6 +174,7 @@
     <MESSAGE value="chore: some ide configs" />
     <MESSAGE value="feat: validation part 1" />
     <MESSAGE value="feat: validation part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: validation part 2" />
+    <MESSAGE value="fix: regex optimization (thanks to @owlfromhogvarts)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: regex optimization (thanks to @owlfromhogvarts)" />
   </component>
 </project>
