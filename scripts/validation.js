@@ -1,10 +1,11 @@
 const form = document.querySelector("form");
+const x_select = document.getElementById("x-select");
 const y_select  = document.getElementById("y-select");
 const r_select = document.getElementById("r-select");
 const y_error = y_select.nextElementSibling;
 const r_error = r_select.nextElementSibling;
 
-const numberRegExp = /^\d+$/;
+const numberRegExp = /-\d+|^\d+$/;
 
 window.addEventListener("load", () => {
     const isValidY = y_select.value.length === 0 || numberRegExp.test(y_select.value);
@@ -16,7 +17,8 @@ window.addEventListener("load", () => {
 
 // This defines what happens when the user types in the field
 y_select.addEventListener("input", () => {
-    const isValid = y_select.value.length === 0 || numberRegExp.test(y_select.value);
+    const isValid = y_select.value.length === 0 || y_select.value === "-"
+        || (numberRegExp.test(y_select.value) && y_select.value >= -5 && y_select.value <= 3);
     if (isValid) {
         y_select.className = "valid";
         y_error.textContent = "";
@@ -27,7 +29,8 @@ y_select.addEventListener("input", () => {
 });
 
 r_select.addEventListener("input", () => {
-    const isValid = r_select.value.length === 0 || numberRegExp.test(r_select.value);
+    const isValid = r_select.value.length === 0 || y_select.value === "-"
+        || (numberRegExp.test(r_select.value) && r_select.value >= 2 && r_select.value <= 5);
     if (isValid) {
         r_select.className = "valid";
         r_error.textContent = "";
@@ -39,14 +42,19 @@ r_select.addEventListener("input", () => {
 
 // This defines what happens when the user tries to submit the data
 form.addEventListener("submit", (event) => {
+
+    // no default sending data to form (it will be done using xmlhttp is js is activated)
     event.preventDefault();
 
-    // todo: known issue: overflow looks ugly, fix css
-
     const isValidY = y_select.value.length === 0 || numberRegExp.test(y_select.value);
+    const isAcceptableY = y_select.value >= -5 && y_select.value <= 3;
     if (!isValidY) {
         y_select.className = "invalid";
         y_error.textContent = "Expected an number";
+        y_error.className = "error active";
+    } else if (!isAcceptableY) {
+        y_select.className = "invalid";
+        y_error.textContent = "Value should be in range [-5; 3]";
         y_error.className = "error active";
     } else {
         y_select.className = "valid";
@@ -55,13 +63,22 @@ form.addEventListener("submit", (event) => {
     }
 
     const isValidR = r_select.value.length === 0 || numberRegExp.test(r_select.value);
+    const isAcceptableR = r_select.value >= 2 && r_select.value <= 5;
     if (!isValidR) {
         r_select.className = "invalid";
         r_error.textContent = "Expected an number";
+        r_error.className = "error active";
+    } else if (!isAcceptableR) {
+        r_select.className = "invalid";
+        r_error.textContent = "Value should be in range [2; 5]";
         r_error.className = "error active";
     } else {
         r_select.className = "valid";
         r_error.textContent = "";
         r_error.className = "error";
+    }
+
+    if (isValidY && isValidR && isAcceptableY && isAcceptableR) {
+        getData(x_select.value, y_select.value, r_select.value);
     }
 });

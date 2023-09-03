@@ -101,12 +101,15 @@ th, td {
     font-size: 80%;
     color: white;
     background-color: #900;
+    overflow: auto;
+    white-space: nowrap;
 
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
 }
 
 .error.active {
     padding: 0.3em;
+    margin: 1px 0 0 0;
 }
 
 .select-container {
@@ -121,6 +124,9 @@ th, td {
 
 .select-input-container {
     width: min-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 
 .round-container {
