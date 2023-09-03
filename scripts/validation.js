@@ -5,20 +5,18 @@ const r_select = document.getElementById("r-select");
 const y_error = y_select.nextElementSibling;
 const r_error = r_select.nextElementSibling;
 
-const numberRegExp = /-\d+|^\d+$/;
-
 window.addEventListener("load", () => {
-    const isValidY = y_select.value.length === 0 || numberRegExp.test(y_select.value);
+    const isValidY = y_select.value.length === 0 || Number.isNaN(+y_select.value);
     y_select.className = isValidY ? "valid" : "invalid";
 
-    const isValidR = y_select.value.length === 0 || numberRegExp.test(r_select.value);
+    const isValidR = y_select.value.length === 0 || Number.isNaN(+r_select.value);
     r_select.className = isValidR ? "valid" : "invalid";
 });
 
 // This defines what happens when the user types in the field
 y_select.addEventListener("input", () => {
     const isValid = y_select.value.length === 0 || y_select.value === "-"
-        || (numberRegExp.test(y_select.value) && y_select.value >= -5 && y_select.value <= 3);
+        || (Number.isNaN(+y_select.value) && y_select.value >= -5 && y_select.value <= 3);
     if (isValid) {
         y_select.className = "valid";
         y_error.textContent = "";
@@ -30,7 +28,7 @@ y_select.addEventListener("input", () => {
 
 r_select.addEventListener("input", () => {
     const isValid = r_select.value.length === 0 || y_select.value === "-"
-        || (numberRegExp.test(r_select.value) && r_select.value >= 2 && r_select.value <= 5);
+        || (Number.isNaN(+r_select.value) && r_select.value >= 2 && r_select.value <= 5);
     if (isValid) {
         r_select.className = "valid";
         r_error.textContent = "";
@@ -43,10 +41,10 @@ r_select.addEventListener("input", () => {
 // This defines what happens when the user tries to submit the data
 form.addEventListener("submit", (event) => {
 
-    // no default sending data to form (it will be done using xmlhttp is js is activated)
+    // no default sending data to form (it will be done using xmlhttp if js is activated)
     event.preventDefault();
 
-    const isValidY = y_select.value.length === 0 || numberRegExp.test(y_select.value);
+    const isValidY = y_select.value.length === 0 || Number.isNaN(+y_select.value);
     const isAcceptableY = y_select.value >= -5 && y_select.value <= 3;
     if (!isValidY) {
         y_select.className = "invalid";
@@ -62,7 +60,7 @@ form.addEventListener("submit", (event) => {
         y_error.className = "error";
     }
 
-    const isValidR = r_select.value.length === 0 || numberRegExp.test(r_select.value);
+    const isValidR = r_select.value.length === 0 || Number.isNaN(+r_select.value);
     const isAcceptableR = r_select.value >= 2 && r_select.value <= 5;
     if (!isValidR) {
         r_select.className = "invalid";
