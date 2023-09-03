@@ -13,10 +13,6 @@ html, body {
     height: calc(100% - 1px);
 }
 
-div {
-    margin: 2px;
-}
-
 form {
     width: 100%;
     margin-bottom: 2%;
@@ -69,6 +65,16 @@ input[type=text] {
     border-radius: 2px;
 }
 
+/* This is our style for the invalid fields */
+input.invalid {
+    border-color: #900;
+    background-color: #fdd;
+}
+
+input:focus.invalid {
+    outline: none;
+}
+
 p {
     margin: 0.5em;
 }
@@ -83,6 +89,26 @@ th, td {
     padding: 3px;
 }
 
+.margin {
+    margin: 2px;
+}
+
+/* This is the style of our error messages */
+.error {
+    width: 100%;
+    padding: 0;
+
+    font-size: 80%;
+    color: white;
+    background-color: #900;
+
+    border-radius: 0 0 5px 5px;
+}
+
+.error.active {
+    padding: 0.3em;
+}
+
 .select-container {
     margin-left: 0.5em;
     display: flex;
@@ -91,6 +117,10 @@ th, td {
     gap: 10px;
     padding: 0 4px;
     justify-content: space-between;
+}
+
+.select-input-container {
+    width: min-content;
 }
 
 .round-container {

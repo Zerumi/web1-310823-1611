@@ -7,18 +7,18 @@
         <title>web1-310823-1611</title>
     </head>
     <body>
-        <div id="container">
-            <div id="header" class="blured-container round-container">
+        <div id="container" class="margin">
+            <div id="header" class="blured-container round-container margin">
                 <p>web1-310823-1611</p>
                 <p>by Afanasyev Kirill Aleksandrovich, group no. P3206</p>
                 <p>Variant no. 1611</p>
             </div>
-            <div id="main">
-                <div id="choose" class="blured-container round-container">
+            <div id="main" class="margin">
+                <div id="choose" class="blured-container round-container margin">
                     <p>Enter parameters:</p>
                     <p><i>Notice!</i> Every parameter should be filled!</p>
                     <form action="actions/check-hit.php" method="get">
-                        <div id="x-select-container" class="select-container">
+                        <div id="x-select-container" class="select-container margin">
                             <label for="x-select">Choose X:</label>
                             <select name="x-select" id="x-select" required>
                                 <option value="">-- Please choose an option--</option>
@@ -33,25 +33,31 @@
                                 <option value="4">4</option>
                             </select>
                         </div>
-                        <div id="y-select-container" class="select-container">
+                        <div id="y-select-container" class="select-container margin">
                             <label for="y-select">Enter Y:</label>
-                            <input type="text" name="y-select" id="y-select" required />
+                            <div id="y-select-input" class="select-input-container">
+                                <input type="text" name="y-select" id="y-select" required />
+                                <span class="error" aria-live="polite"></span>
+                            </div>
                         </div>
-                        <div id="z-select-container" class="select-container">
+                        <div id="r-select-container" class="select-container margin">
                             <label for="r-select">Enter R:</label>
-                            <input type="text" name="r-select" id="r-select" required />
+                            <div id="r-select-input" class="select-input-container">
+                                <input type="text" name="r-select" id="r-select" required />
+                                <span class="error" aria-live="polite"></span>
+                            </div>
                         </div>
-                        <div id="submit-container">
+                        <div id="submit-container" class="margin">
                             <input type="submit" id="submit-button">
                         </div>
                     </form>
                 </div>
-                <div id="graph" class="blured-container round-container">
+                <div id="graph" class="blured-container round-container margin">
                     <canvas>
 
                     </canvas>
                 </div>
-                <div id="result-table" class="blured-container">
+                <div id="result-table" class="blured-container margin">
                     <table>
                         <thead>
                             <tr>
@@ -67,9 +73,10 @@
                     </table>
                 </div>
             </div>
-            <div id="footer" class="blured-container round-container">
+            <div id="footer" class="blured-container round-container margin">
                 <p>Copyright © Zerumi, 2023. Licensed under <a href="LICENSE">ISC license</a>. Plagiarism is prohibited.</p>
             </div>
         </div>
+        <script src="scripts/validation.js"></script>
     </body>
 </html>
