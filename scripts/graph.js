@@ -97,6 +97,7 @@ function scaleYAxesCoordinate(coordinate) {
 
 function drawShapesByR(r) {
     if (canvas.getContext) {
+        // clear everything else
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         draw();
 
@@ -162,8 +163,13 @@ function drawTriangle (ctx, startPointInAxes, secondTrianglePointInAxes, thirdTr
     }
 }
 
-function drawPoint(x, y) {
+function drawPoint(x, y, r) {
     if (canvas.getContext) {
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        draw();
+        drawShapesByR(r);
+
         const pointSize = 4;
 
         let scaledPoint = {x: scaleXAxesCoordinate(x), y: scaleYAxesCoordinate(y)};

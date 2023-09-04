@@ -86,7 +86,7 @@ form.addEventListener("submit", (event) => {
     }
 
     if (isValidY && isValidR && isAcceptableY && isAcceptableR) {
-        drawPoint(x_select.value, y);
+        drawPoint(x_select.value, y, r);
         getData(x_select.value, y_select.value, r_select.value);
     }
 });
