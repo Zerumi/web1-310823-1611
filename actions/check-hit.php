@@ -26,10 +26,10 @@ function check_hit($x, $y, $r): string
     // check 1-st section - square
     if ($x >= 0 and $y >= 0 and $x <= $r and $y <= $r) return "Попадание";
     // check 2-nd section - 1/4 circle
-    else if ($x < 0 and $y > 0 and (pow($x, 2) + pow($y, 2) <= pow($r / 2, 2)))
+    else if ($x <= 0 and $y >= 0 and (pow($x, 2) + pow($y, 2) <= pow($r / 2, 2)))
         return "Попадание";
     // 3-rd section - noting / check 4-th section - triangle
-    else if ($x > 0 and $y < 0 and abs($x) + abs($y) <= $r) return "Попадание";
+    else if ($x >= 0 and $y <= 0 and abs($x) + abs($y) <= $r) return "Попадание";
     // everything else is miss
     else return "Промах";
 }
