@@ -196,8 +196,7 @@ th, td {
 }
 
 #graph {
-    width: 250px;
-    height: 225px;
+    padding: 2px;
 }
 
 #result-table-container {
