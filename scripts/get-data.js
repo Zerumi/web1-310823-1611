@@ -7,6 +7,7 @@ function getData(select_x, select_y, select_r) {
         if (req.readyState === 4) {
             if (req.status === 200) {
                 const values = req.responseText.split(';');
+                console.log("Got data! " + values);
                 addToTable(values[0], values[1], values[2], values[3], values[4], values[5]);
             } else {
                 console.error("Error loading page / " + req.statusText + " " + req.readyState + "\n");

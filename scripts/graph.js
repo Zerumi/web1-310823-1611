@@ -19,11 +19,11 @@ function draw() {
         xAxisScale = canvasWidth / 10;
         yAxisScale = canvasHeight / 10;
 
-        console.log(canvasWidth);
-        console.log(canvasHeight);
+        //console.log(canvasWidth);
+        //console.log(canvasHeight);
 
-        console.log(xAxisScale);
-        console.log(yAxisScale);
+        //console.log(xAxisScale);
+        //console.log(yAxisScale);
 
         // Define the origin point for the axes
         let originX = canvasWidth / 2;
