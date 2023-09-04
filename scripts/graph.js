@@ -151,6 +151,18 @@ function drawTriangle (ctx, startPointInAxes, secondTrianglePointInAxes, thirdTr
     ctx.fill();
 }
 
+function drawPoint(x, y) {
+    const pointSize = 4;
+
+    let scaledPoint = {x: scaleXAxesCoordinate(x), y: scaleYAxesCoordinate(y)};
+    let pointOnCanvas = axesToCanvasCoordinates(scaledPoint.x, scaledPoint.y, canvas);
+
+    ctx.fillStyle = "rgb(200,0,0)";
+
+    ctx.beginPath();
+    ctx.fillRect(pointOnCanvas.x - pointSize / 2, pointOnCanvas.y - pointSize / 2, pointSize, pointSize);
+}
+
 draw();
 
 /*

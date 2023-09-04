@@ -24,7 +24,7 @@ function check_r($r): bool
 function check_hit($x, $y, $r): string
 {
     // check 1-st section - square
-    if ($x > 0 and $y > 0 and $x < $r and $y < $r) return "Попадание";
+    if ($x >= 0 and $y >= 0 and $x <= $r and $y <= $r) return "Попадание";
     // check 2-nd section - 1/4 circle
     else if ($x < 0 and $y > 0 and (pow($x, 2) + pow($y, 2) <= pow($r / 2, 2)))
         return "Попадание";

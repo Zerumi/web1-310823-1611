@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: graph part 2">
+    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: graph part 3">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/actions/check-hit.php" beforeDir="false" afterPath="$PROJECT_DIR$/actions/check-hit.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/graph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validation.js" afterDir="false" />
     </list>
@@ -205,7 +206,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693856942783</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat: graph part 3">
+      <option name="closed" value="true" />
+      <created>1693864757803</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1693864757803</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -235,6 +244,7 @@
     <MESSAGE value="feat: result table is working (almost done)" />
     <MESSAGE value="feat: drawing graph part 0" />
     <MESSAGE value="feat: graph part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: graph part 2" />
+    <MESSAGE value="feat: graph part 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: graph part 3" />
   </component>
 </project>
