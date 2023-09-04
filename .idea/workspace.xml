@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="fix: checking canvas context">
+    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="fix: reversed checks order in table">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/get-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/get-data.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +236,23 @@
       <option name="project" value="LOCAL" />
       <updated>1693866327597</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix: removing other points from canvas between shoots">
+      <option name="closed" value="true" />
+      <created>1693866965877</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1693866965877</updated>
+    </task>
+    <task id="LOCAL-00018" summary="fix: reversed checks order in table">
+      <option name="closed" value="true" />
+      <created>1693867048245</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1693867048245</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -271,6 +286,8 @@
     <MESSAGE value="feat: graph part 4 final" />
     <MESSAGE value="fix: hit formula" />
     <MESSAGE value="fix: checking canvas context" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: checking canvas context" />
+    <MESSAGE value="fix: removing other points from canvas between shoots" />
+    <MESSAGE value="fix: reversed checks order in table" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: reversed checks order in table" />
   </component>
 </project>

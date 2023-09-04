@@ -1,7 +1,7 @@
 function getData(select_x, select_y, select_r) {
     const req = new XMLHttpRequest();
     req.open("GET",
-        "../actions/check-hit.php?x-select=" + select_x + "&y-select=" + select_y + "&r-select=" + select_r,
+        "./actions/check-hit.php?x-select=" + select_x + "&y-select=" + select_y + "&r-select=" + select_r,
         true);
     req.onreadystatechange = () => {
         if (req.readyState === 4) {
