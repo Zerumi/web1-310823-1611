@@ -96,85 +96,84 @@ function scaleYAxesCoordinate(coordinate) {
 }
 
 function drawShapesByR(r) {
-    ctx.clearRect(0,0, canvas.width, canvas.height);
-    draw();
+    if (canvas.getContext) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        draw();
 
-    // literally (0;0)
+        // literally (0;0)
 
-    let startPointInAxes = { x: 0, y: 0 };
-    let startPointInCanvas = axesToCanvasCoordinates(startPointInAxes.x, startPointInAxes.y, canvas);
+        let startPointInAxes = {x: 0, y: 0};
+        let startPointInCanvas = axesToCanvasCoordinates(startPointInAxes.x, startPointInAxes.y, canvas);
 
-    // draw square
+        // draw square
 
-    let endPointInAxes = {x: r, y: r};
-    let endScaledPointInAxes = {x: scaleXAxesCoordinate(endPointInAxes.x), y: scaleYAxesCoordinate(endPointInAxes.y)};
-    //let endPointInCanvas = axesToCanvasCoordinates(endScaledPointInAxes.x, endScaledPointInAxes.y, canvas);
+        let endPointInAxes = {x: r, y: r};
+        let endScaledPointInAxes = {
+            x: scaleXAxesCoordinate(endPointInAxes.x),
+            y: scaleYAxesCoordinate(endPointInAxes.y)
+        };
+        //let endPointInCanvas = axesToCanvasCoordinates(endScaledPointInAxes.x, endScaledPointInAxes.y, canvas);
 
-    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
-    ctx.beginPath();
-    ctx.fillRect(startPointInCanvas.x, startPointInCanvas.y, endScaledPointInAxes.x, -endScaledPointInAxes.y);
-    //console.log(endScaledPointInAxes.x, -endScaledPointInAxes.y);
+        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.beginPath();
+        ctx.fillRect(startPointInCanvas.x, startPointInCanvas.y, endScaledPointInAxes.x, -endScaledPointInAxes.y);
+        //console.log(endScaledPointInAxes.x, -endScaledPointInAxes.y);
 
-    // draw triangle
-    let secondTrianglePointInAxes = {x: r, y: 0};
-    let thirdTrianglePointInAxes = {x: 0, y: -r};
-    drawTriangle(ctx, startPointInAxes, secondTrianglePointInAxes, thirdTrianglePointInAxes);
+        // draw triangle
+        let secondTrianglePointInAxes = {x: r, y: 0};
+        let thirdTrianglePointInAxes = {x: 0, y: -r};
+        drawTriangle(ctx, startPointInAxes, secondTrianglePointInAxes, thirdTrianglePointInAxes);
 
-    // draw 1/4 circle
-    let calculatedRadius = scaleXAxesCoordinate(r/2);
+        // draw 1/4 circle
+        let calculatedRadius = scaleXAxesCoordinate(r / 2);
 
-    ctx.beginPath();
-    ctx.arc(startPointInCanvas.x, startPointInCanvas.y, calculatedRadius, 3 * Math.PI / 2, Math.PI, true);
-    ctx.fill();
+        ctx.beginPath();
+        ctx.arc(startPointInCanvas.x, startPointInCanvas.y, calculatedRadius, 3 * Math.PI / 2, Math.PI, true);
+        ctx.fill();
 
-    // draw missing triangle
-    let secondTrianglePointInAxesM = {x: -r/2, y: 0};
-    let thirdTrianglePointInAxesM = {x: 0, y: r/2};
-    drawTriangle(ctx, startPointInAxes, secondTrianglePointInAxesM, thirdTrianglePointInAxesM);
+        // draw missing triangle
+        let secondTrianglePointInAxesM = {x: -r / 2, y: 0};
+        let thirdTrianglePointInAxesM = {x: 0, y: r / 2};
+        drawTriangle(ctx, startPointInAxes, secondTrianglePointInAxesM, thirdTrianglePointInAxesM);
+    }
 }
 
 function drawTriangle (ctx, startPointInAxes, secondTrianglePointInAxes, thirdTrianglePointInAxes) {
-    let startPointInCanvas = axesToCanvasCoordinates(startPointInAxes.x, startPointInAxes.y, canvas);
-    let secondScaledTrianglePointInAxes = {x: scaleXAxesCoordinate(secondTrianglePointInAxes.x),
-        y: scaleYAxesCoordinate(secondTrianglePointInAxes.y)}
-    let thirdScaledTrianglePointInAxes = {x: scaleXAxesCoordinate(thirdTrianglePointInAxes.x),
-        y: scaleYAxesCoordinate(thirdTrianglePointInAxes.y)};
-    let secondTrianglePointInCanvas = axesToCanvasCoordinates
-    (secondScaledTrianglePointInAxes.x, secondScaledTrianglePointInAxes.y, canvas);
-    let thirdScaledTrianglePointInCanvas = axesToCanvasCoordinates
-    (thirdScaledTrianglePointInAxes.x, thirdScaledTrianglePointInAxes.y, canvas);
+    if (canvas.getContext) {
+        let startPointInCanvas = axesToCanvasCoordinates(startPointInAxes.x, startPointInAxes.y, canvas);
+        let secondScaledTrianglePointInAxes = {
+            x: scaleXAxesCoordinate(secondTrianglePointInAxes.x),
+            y: scaleYAxesCoordinate(secondTrianglePointInAxes.y)
+        }
+        let thirdScaledTrianglePointInAxes = {
+            x: scaleXAxesCoordinate(thirdTrianglePointInAxes.x),
+            y: scaleYAxesCoordinate(thirdTrianglePointInAxes.y)
+        };
+        let secondTrianglePointInCanvas = axesToCanvasCoordinates
+        (secondScaledTrianglePointInAxes.x, secondScaledTrianglePointInAxes.y, canvas);
+        let thirdScaledTrianglePointInCanvas = axesToCanvasCoordinates
+        (thirdScaledTrianglePointInAxes.x, thirdScaledTrianglePointInAxes.y, canvas);
 
-    ctx.beginPath();
-    ctx.moveTo(startPointInCanvas.x, startPointInCanvas.y);
-    ctx.lineTo(secondTrianglePointInCanvas.x, secondTrianglePointInCanvas.y);
-    ctx.lineTo(thirdScaledTrianglePointInCanvas.x, thirdScaledTrianglePointInCanvas.y);
-    ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(startPointInCanvas.x, startPointInCanvas.y);
+        ctx.lineTo(secondTrianglePointInCanvas.x, secondTrianglePointInCanvas.y);
+        ctx.lineTo(thirdScaledTrianglePointInCanvas.x, thirdScaledTrianglePointInCanvas.y);
+        ctx.fill();
+    }
 }
 
 function drawPoint(x, y) {
-    const pointSize = 4;
+    if (canvas.getContext) {
+        const pointSize = 4;
 
-    let scaledPoint = {x: scaleXAxesCoordinate(x), y: scaleYAxesCoordinate(y)};
-    let pointOnCanvas = axesToCanvasCoordinates(scaledPoint.x, scaledPoint.y, canvas);
+        let scaledPoint = {x: scaleXAxesCoordinate(x), y: scaleYAxesCoordinate(y)};
+        let pointOnCanvas = axesToCanvasCoordinates(scaledPoint.x, scaledPoint.y, canvas);
 
-    ctx.fillStyle = "rgb(200,0,0)";
+        ctx.fillStyle = "rgb(200,0,0)";
 
-    ctx.beginPath();
-    ctx.fillRect(pointOnCanvas.x - pointSize / 2, pointOnCanvas.y - pointSize / 2, pointSize, pointSize);
+        ctx.beginPath();
+        ctx.fillRect(pointOnCanvas.x - pointSize / 2, pointOnCanvas.y - pointSize / 2, pointSize, pointSize);
+    }
 }
 
 draw();
-
-/*
-let canvasPoint = { x: 400, y: 100 }; // Replace with your desired canvas coordinates
-let axesPoint = canvasToAxesCoordinates(canvasPoint.x, canvasPoint.y, canvas);
-
-// Now, axesPoint contains the scaled axes coordinates of the canvas point
-console.log('Axes Coordinates: x = ' + axesPoint.x + ', y = ' + axesPoint.y);
-
-let pointInAxes = { x: 150, y: 150 }; // Replace with your desired coordinates
-let pointInCanvas = axesToCanvasCoordinates(pointInAxes.x, pointInAxes.y, canvas);
-
-// Now, pointInCanvas contains the canvas coordinates of the point in the axes system
-console.log('Canvas Coordinates: x = ' + pointInCanvas.x + ', y = ' + pointInCanvas.y);
-*/
