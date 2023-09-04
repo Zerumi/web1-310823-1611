@@ -7,11 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: drawing graph part 0">
+    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: graph part 2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/graph.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693778995528</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat: graph part 2">
+      <option name="closed" value="true" />
+      <created>1693856942783</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1693856942783</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +234,7 @@
     <MESSAGE value="fix: numeric casting optimization (thanks to @owlfromhogvarts)" />
     <MESSAGE value="feat: result table is working (almost done)" />
     <MESSAGE value="feat: drawing graph part 0" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: drawing graph part 0" />
+    <MESSAGE value="feat: graph part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: graph part 2" />
   </component>
 </project>

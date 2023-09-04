@@ -38,6 +38,8 @@ r_select.addEventListener("input", () => {
         r_select.className = "valid";
         r_error.textContent = "";
         r_error.className = "error";
+
+        drawShapesByR(r);
     } else {
         r_select.className = "invalid";
     }

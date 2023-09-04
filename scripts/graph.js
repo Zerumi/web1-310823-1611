@@ -1,19 +1,23 @@
 const canvas = document.getElementById("graph");
+const ctx = canvas.getContext("2d");
 
 // Define axis labels
 const xAxisLabel = "X";
 const yAxisLabel = "Y";
 
+let xAxisScale;
+let yAxisScale;
+
 function draw() {
     if (canvas.getContext) {
-        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "rgb(0,0,0)";
 
         // Define the canvas dimensions
         let canvasWidth = canvas.width;
         let canvasHeight = canvas.height;
 
-        let xAxisScale = canvasWidth / 10;
-        let yAxisScale = canvasHeight / 10;
+        xAxisScale = canvasWidth / 10;
+        yAxisScale = canvasHeight / 10;
 
         console.log(canvasWidth);
         console.log(canvasHeight);
@@ -49,7 +53,7 @@ function draw() {
             ctx.moveTo(scalePos.x, scalePos.y - 5);
             ctx.lineTo(scalePos.x, scalePos.y + 5);
             ctx.stroke();
-            ctx.fillText(i, scalePos.x - 10, scalePos.y + 20);
+            ctx.fillText(rescaleXAxesCoordinate(i), scalePos.x - 10, scalePos.y + 20);
         }
 
         for (let j = -canvas.height / 2; j < canvas.height / 2; j += yAxisScale) {
@@ -58,15 +62,12 @@ function draw() {
             ctx.moveTo(scalePos.x - 5, scalePos.y);
             ctx.lineTo(scalePos.x + 5, scalePos.y);
             ctx.stroke();
-            ctx.fillText(j, scalePos.x + 10, scalePos.y + 5);
+            ctx.fillText(rescaleYAxesCoordinate(j), scalePos.x + 10, scalePos.y + 5);
         }
     }
 }
 
 function axesToCanvasCoordinates(xAxes, yAxes, canvas) {
-    // Get the canvas context
-    let ctx = canvas.getContext('2d');
-
     // Define the origin point for the axes
     let originX = canvas.width / 2;
     let originY = canvas.height / 2;
@@ -78,25 +79,90 @@ function axesToCanvasCoordinates(xAxes, yAxes, canvas) {
     return { x: canvasX, y: canvasY };
 }
 
-function canvasToAxesCoordinates(canvasX, canvasY, canvas) {
-    // Get the canvas context
-    let ctx = canvas.getContext('2d');
+function rescaleXAxesCoordinate(coordinate) {
+    return coordinate / xAxisScale;
+}
 
-    // Define the origin point for the axes
-    let originX = canvas.width / 2;
-    let originY = canvas.height / 2;
+function rescaleYAxesCoordinate(coordinate) {
+    return coordinate / yAxisScale;
+}
 
-    // Calculate the scaled axes coordinates
-    let xAxes = canvasX - originX;
-    let yAxes = -(canvasY - originY); // Invert yAxes to match the axes system
+function scaleXAxesCoordinate(coordinate) {
+    return coordinate * xAxisScale;
+}
 
-    return { x: xAxes, y: yAxes };
+function scaleYAxesCoordinate(coordinate) {
+    return coordinate * yAxisScale;
+}
+
+function drawShapesByR(r) {
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    draw();
+
+    // literally (0;0)
+
+    let startPointInAxes = { x: 0, y: 0 };
+    let startPointInCanvas = axesToCanvasCoordinates(startPointInAxes.x, startPointInAxes.y, canvas);
+
+    // draw square
+
+    let endPointInAxes = {x: r, y: r};
+    let endScaledPointInAxes = {x: scaleXAxesCoordinate(endPointInAxes.x), y: scaleYAxesCoordinate(endPointInAxes.y)};
+    //let endPointInCanvas = axesToCanvasCoordinates(endScaledPointInAxes.x, endScaledPointInAxes.y, canvas);
+
+    ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+    ctx.beginPath();
+    ctx.fillRect(startPointInCanvas.x, startPointInCanvas.y, endScaledPointInAxes.x, -endScaledPointInAxes.y);
+    //console.log(endScaledPointInAxes.x, -endScaledPointInAxes.y);
+
+    // draw triangle
+    let secondTrianglePointInAxes = {x: r, y: 0};
+    let thirdTrianglePointInAxes = {x: 0, y: -r};
+    drawTriangle(ctx, startPointInAxes, secondTrianglePointInAxes, thirdTrianglePointInAxes);
+
+    // draw 1/4 circle
+    let calculatedRadius = scaleXAxesCoordinate(r/2);
+
+    ctx.beginPath();
+    ctx.arc(startPointInCanvas.x, startPointInCanvas.y, calculatedRadius, 3 * Math.PI / 2, Math.PI, true);
+    ctx.fill();
+
+    // draw missing triangle
+    let secondTrianglePointInAxesM = {x: -r/2, y: 0};
+    let thirdTrianglePointInAxesM = {x: 0, y: r/2};
+    drawTriangle(ctx, startPointInAxes, secondTrianglePointInAxesM, thirdTrianglePointInAxesM);
+}
+
+function drawTriangle (ctx, startPointInAxes, secondTrianglePointInAxes, thirdTrianglePointInAxes) {
+    let startPointInCanvas = axesToCanvasCoordinates(startPointInAxes.x, startPointInAxes.y, canvas);
+    let secondScaledTrianglePointInAxes = {x: scaleXAxesCoordinate(secondTrianglePointInAxes.x),
+        y: scaleYAxesCoordinate(secondTrianglePointInAxes.y)}
+    let thirdScaledTrianglePointInAxes = {x: scaleXAxesCoordinate(thirdTrianglePointInAxes.x),
+        y: scaleYAxesCoordinate(thirdTrianglePointInAxes.y)};
+    let secondTrianglePointInCanvas = axesToCanvasCoordinates
+    (secondScaledTrianglePointInAxes.x, secondScaledTrianglePointInAxes.y, canvas);
+    let thirdScaledTrianglePointInCanvas = axesToCanvasCoordinates
+    (thirdScaledTrianglePointInAxes.x, thirdScaledTrianglePointInAxes.y, canvas);
+
+    ctx.beginPath();
+    ctx.moveTo(startPointInCanvas.x, startPointInCanvas.y);
+    ctx.lineTo(secondTrianglePointInCanvas.x, secondTrianglePointInCanvas.y);
+    ctx.lineTo(thirdScaledTrianglePointInCanvas.x, thirdScaledTrianglePointInCanvas.y);
+    ctx.fill();
 }
 
 draw();
 
-let canvasPoint = { x: 125, y: 125 }; // Replace with your desired canvas coordinates
+/*
+let canvasPoint = { x: 400, y: 100 }; // Replace with your desired canvas coordinates
 let axesPoint = canvasToAxesCoordinates(canvasPoint.x, canvasPoint.y, canvas);
 
 // Now, axesPoint contains the scaled axes coordinates of the canvas point
 console.log('Axes Coordinates: x = ' + axesPoint.x + ', y = ' + axesPoint.y);
+
+let pointInAxes = { x: 150, y: 150 }; // Replace with your desired coordinates
+let pointInCanvas = axesToCanvasCoordinates(pointInAxes.x, pointInAxes.y, canvas);
+
+// Now, pointInCanvas contains the canvas coordinates of the point in the axes system
+console.log('Canvas Coordinates: x = ' + pointInCanvas.x + ', y = ' + pointInCanvas.y);
+*/
