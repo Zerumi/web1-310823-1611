@@ -2,7 +2,7 @@ const result_table = document.getElementById("result-table")
 
 function addToTable(x, y, r, result, exAt, exTime) {
     // todo: add
-    let row = result_table.insertRow(-1);
+    let row = result_table.insertRow(1);
     let x_cell = row.insertCell(0);
     let y_cell = row.insertCell(1);
     let r_cell = row.insertCell(2);
