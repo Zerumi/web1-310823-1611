@@ -57,11 +57,11 @@ form.addEventListener("submit", (event) => {
     const isAcceptableY = y >= -5 && y <= 3;
     if (!isValidY) {
         y_select.className = "invalid";
-        y_error.textContent = "Expected an number";
+        y_error.textContent = "Expected as number, like -1";
         y_error.className = "error active";
     } else if (!isAcceptableY) {
         y_select.className = "invalid";
-        y_error.textContent = "Value should be in range [-5; 3]";
+        y_error.textContent = "Number should be between -5 and 3";
         y_error.className = "error active";
     } else {
         y_select.className = "valid";
@@ -73,11 +73,11 @@ form.addEventListener("submit", (event) => {
     const isAcceptableR = r >= 2 && r <= 5;
     if (!isValidR) {
         r_select.className = "invalid";
-        r_error.textContent = "Expected an number";
+        r_error.textContent = "Expected as number, like 3";
         r_error.className = "error active";
     } else if (!isAcceptableR) {
         r_select.className = "invalid";
-        r_error.textContent = "Value should be in range [2; 5]";
+        r_error.textContent = "Number should be between 2 and 5";
         r_error.className = "error active";
     } else {
         r_select.className = "valid";

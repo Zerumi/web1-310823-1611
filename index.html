@@ -16,7 +16,7 @@
             <div id="main" class="margin">
                 <div id="choose" class="blured-container round-container margin">
                     <p>Enter parameters:</p>
-                    <p><i>Notice!</i> Every parameter should be filled!</p>
+                    <p><i>Notice!</i> <b>Every</b> parameter <b>should be filled!</b></p>
                     <form action="actions/check-hit.php" method="get">
                         <div id="x-select-container" class="select-container margin">
                             <label for="x-select">Choose X:</label>
@@ -37,7 +37,7 @@
                             <label for="y-select">Enter Y:</label>
                             <div id="y-select-input" class="select-input-container">
                                 <input type="text" name="y-select" id="y-select" class="input-select"
-                                       placeholder="Should be in range [-5; 3]" required />
+                                       placeholder="Should be between -5 and 3" required />
                                 <span class="error" aria-live="polite"></span>
                             </div>
                         </div>
@@ -45,7 +45,7 @@
                             <label for="r-select">Enter R:</label>
                             <div id="r-select-input" class="select-input-container">
                                 <input type="text" name="r-select" id="r-select" class="input-select"
-                                       placeholder="Should be in range [2; 5]" required />
+                                       placeholder="Should be between 2 and 5" required />
                                 <span class="error" aria-live="polite"></span>
                             </div>
                         </div>
