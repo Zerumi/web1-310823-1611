@@ -1,5 +1,18 @@
 /*noinspection ALL*/
 
+@font-face {
+    font-family: "Bree Serif";
+    src: url('../fonts/BreeSerif-Regular.eot');
+    src: url('../fonts/BreeSerif-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/BreeSerif-Regular.woff2') format('woff2'),
+    url('../fonts/BreeSerif-Regular.woff') format('woff'),
+    url('../fonts/BreeSerif-Regular.svg#BreeSerif-Regular') format('svg'),
+    url('../fonts/BreeSerif-Regular.ttf')  format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 * {
     margin: 0;
     border: 0;
