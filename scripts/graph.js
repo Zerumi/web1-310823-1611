@@ -11,6 +11,7 @@ let yAxisScale;
 function draw() {
     if (canvas.getContext) {
         ctx.fillStyle = "rgb(240,238,235)";
+        ctx.strokeStyle = "rgb(240,238,235)";
 
         // Define the canvas dimensions
         let canvasWidth = canvas.width;
@@ -33,16 +34,19 @@ function draw() {
         ctx.beginPath();
         ctx.moveTo(0, originY);
         ctx.lineTo(canvasWidth, originY);
-        ctx.stroke(); // todo: stroke with rgb(240,238,235) color
+        ctx.stroke();
 
         // Draw the y-axis
         ctx.beginPath();
         ctx.moveTo(originX, 0);
         ctx.lineTo(originX, canvasHeight);
-        ctx.stroke(); // todo: also here
+        ctx.stroke();
 
         // Label the axes
-        ctx.font = '14px Arial';
+        ctx.fontFamily = "Open Sans, sans-serif";
+        let fontArgs = ctx.font.split(' ');
+        let newSize = '14px';
+        ctx.font = newSize + ' ' + fontArgs[fontArgs.length - 1]; /// using the last part
         ctx.fillText(xAxisLabel, canvas.width - 15, canvas.height / 2 - 5);
         ctx.fillText(yAxisLabel, canvas.width / 2 + 5, 15);
 
@@ -115,7 +119,7 @@ function drawShapesByR(r) {
         };
         //let endPointInCanvas = axesToCanvasCoordinates(endScaledPointInAxes.x, endScaledPointInAxes.y, canvas);
 
-        ctx.fillStyle = "rgba(0, 0, 200, 0.5)";
+        ctx.fillStyle = "rgba(0,0,100,0.5)";
         ctx.beginPath();
         ctx.fillRect(startPointInCanvas.x, startPointInCanvas.y, endScaledPointInAxes.x, -endScaledPointInAxes.y);
         //console.log(endScaledPointInAxes.x, -endScaledPointInAxes.y);

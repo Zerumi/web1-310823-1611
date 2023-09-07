@@ -11,7 +11,8 @@
 html, body {
     background-image: url("../images/111471343_p0.jpg");
     background-size: cover;
-    font-family: "Fira", serif;
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
     height: calc(100% - 1px);
 }
 
@@ -162,9 +163,9 @@ th, td {
     overflow: auto;
 
     /* setup font in header by task */
-    font-family: serif;
+    font-family: "Bree Serif", serif;
     color: #ffffff;
-    font-size: 16px;
+    font-size: 15px;
 
     height: fit-content; /* auto size for header */
     background-color: rgba(255, 235, 205, 0.2);
@@ -215,6 +216,6 @@ th, td {
 
     padding: 5px;
 
-    height: fit-content; /* also for footer */
+    height: fit-content; /* also auto-size for footer */
     background-color: rgba(255, 235, 205, 0.2);
 }

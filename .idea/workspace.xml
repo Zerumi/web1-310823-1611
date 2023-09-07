@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="fix: url to php">
+    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: redesign part 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/add-to-table.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/add-to-table.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/graph.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
     </list>
@@ -250,7 +249,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693867540144</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="feat: redesign part 1">
+      <option name="closed" value="true" />
+      <created>1694091775564</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1694091775564</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +294,7 @@
     <MESSAGE value="fix: removing other points from canvas between shoots" />
     <MESSAGE value="fix: reversed checks order in table" />
     <MESSAGE value="fix: url to php" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: url to php" />
+    <MESSAGE value="feat: redesign part 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: redesign part 1" />
   </component>
 </project>
