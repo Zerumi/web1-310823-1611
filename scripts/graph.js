@@ -10,7 +10,7 @@ let yAxisScale;
 
 function draw() {
     if (canvas.getContext) {
-        ctx.fillStyle = "rgb(0,0,0)";
+        ctx.fillStyle = "rgb(240,238,235)";
 
         // Define the canvas dimensions
         let canvasWidth = canvas.width;
@@ -33,13 +33,13 @@ function draw() {
         ctx.beginPath();
         ctx.moveTo(0, originY);
         ctx.lineTo(canvasWidth, originY);
-        ctx.stroke();
+        ctx.stroke(); // todo: stroke with rgb(240,238,235) color
 
         // Draw the y-axis
         ctx.beginPath();
         ctx.moveTo(originX, 0);
         ctx.lineTo(originX, canvasHeight);
-        ctx.stroke();
+        ctx.stroke(); // todo: also here
 
         // Label the axes
         ctx.font = '14px Arial';

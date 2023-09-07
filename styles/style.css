@@ -9,7 +9,7 @@
 }
 
 html, body {
-    background-image: url("../images/128744.jpg");
+    background-image: url("../images/111471343_p0.jpg");
     background-size: cover;
     font-family: "Fira", serif;
     height: calc(100% - 1px);
@@ -138,6 +138,8 @@ th, td {
 }
 
 .blured-container {
+    color: #F0EEEB;
+    background-color: rgba(77, 77, 77, 0.5);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -161,7 +163,7 @@ th, td {
 
     /* setup font in header by task */
     font-family: serif;
-    color: #2f2f2f;
+    color: #ffffff;
     font-size: 16px;
 
     height: fit-content; /* auto size for header */
@@ -179,7 +181,6 @@ th, td {
 #choose {
     float: left;
     width: fit-content;
-    background-color: #d5d5d570;
     height: fit-content;
 }
 
@@ -211,8 +212,6 @@ th, td {
     }
 
     overflow: auto;
-
-    color: #CCCCCC;
 
     padding: 5px;
 
