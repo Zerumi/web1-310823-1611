@@ -1,5 +1,7 @@
-function getData(select_x, select_y, select_r) {
+// avoid general names like getData. it rises questions like what data does the method get?
+function getIsIntersects(select_x, select_y, select_r) {
     const req = new XMLHttpRequest();
+    // better use URLSearchParams to build request options
     req.open("GET",
         "./actions/check-hit.php?x-select=" + select_x + "&y-select=" + select_y + "&r-select=" + select_r,
         true);

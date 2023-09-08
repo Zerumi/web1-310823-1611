@@ -15,6 +15,7 @@ window.addEventListener("load", () => {
 });
 
 // This defines what happens when the user types in the field
+// nit: place single event handler on parent element
 y_select.addEventListener("input", () => {
     const y = +y_select.value;
 
@@ -51,6 +52,7 @@ form.addEventListener("submit", (event) => {
     const r = +r_select.value;
 
     // no default sending data to form (it will be done using xmlhttp if js is activated)
+    // FIXME:  extract "error active" to constant
     event.preventDefault();
 
     const isValidY = y_select.value.length === 0 || !Number.isNaN(y);
