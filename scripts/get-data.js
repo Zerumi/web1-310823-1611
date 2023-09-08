@@ -1,9 +1,10 @@
-// avoid general names like getData. it rises questions like what data does the method get?
 function getIsIntersects(select_x, select_y, select_r) {
     const req = new XMLHttpRequest();
-    // better use URLSearchParams to build request options
+    const urlParams =
+        new URLSearchParams({"x-select": select_x, "y-select": select_y, "r-select": select_r});
+    console.log(urlParams.toString());
     req.open("GET",
-        "./actions/check-hit.php?x-select=" + select_x + "&y-select=" + select_y + "&r-select=" + select_r,
+        "./actions/check-hit.php?" + urlParams.toString(),
         true);
     req.onreadystatechange = () => {
         if (req.readyState === 4) {

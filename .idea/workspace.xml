@@ -7,10 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="feat: xmlhttprequest to form &amp; proceeding values + validation bugfixes">
+    <list default="true" id="34f840f5-5ad3-4670-8cf0-0deb2663b0c0" name="Changes" comment="fix: some humanable changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions/check-hit.php" beforeDir="false" afterPath="$PROJECT_DIR$/actions/check-hit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/fix-placeholder.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/fix-placeholder.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/get-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/get-data.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/validation.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -100,7 +100,7 @@
       <workItem from="1693509448964" duration="5654000" />
       <workItem from="1693515509025" duration="2020000" />
       <workItem from="1693757530784" duration="5014000" />
-      <workItem from="1694115099820" duration="3042000" />
+      <workItem from="1694115099820" duration="7726000" />
     </task>
     <task id="LOCAL-00001" summary="site frame">
       <option name="closed" value="true" />
@@ -278,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1694115118354</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fix: some humanable changes">
+      <option name="closed" value="true" />
+      <created>1694122199953</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1694122199953</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,6 +325,7 @@
     <MESSAGE value="fix: url to php" />
     <MESSAGE value="feat: redesign part 1" />
     <MESSAGE value="feat: redesign part 2 final" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: redesign part 2 final" />
+    <MESSAGE value="fix: some humanable changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: some humanable changes" />
   </component>
 </project>
