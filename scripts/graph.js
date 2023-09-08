@@ -72,6 +72,7 @@ function draw() {
 }
 
 function axesToCanvasCoordinates(xAxes, yAxes, canvas) {
+    // nit: can use canvasContext.translate
     // Define the origin point for the axes
     let originX = canvas.width / 2;
     let originY = canvas.height / 2;

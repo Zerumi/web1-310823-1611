@@ -1,12 +1,10 @@
-const inputs = document.getElementsByClassName("input-select");
+const inputs = document.querySelectorAll(".input-select");
 
-let max_width = Number.MIN_VALUE;
-
-for (let i = 0; i < inputs.length; i++) {
-    if (inputs[i].getAttribute('placeholder').length > max_width)
-        max_width = inputs[i].getAttribute('placeholder').length;
-}
+const placeholderWidths = inputs.entries.map(
+  (node) => node.getAttribute("placeholder").length
+);
+const max_width = Math.max(placeholderWidths);
 
 for (let i = 0; i < inputs.length; i++) {
-    inputs[i].setAttribute('size', max_width.toString());
+  inputs[i].setAttribute("size", max_width.toString());
 }
