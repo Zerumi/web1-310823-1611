@@ -47,6 +47,8 @@ r_select.addEventListener("input", () => {
         r_error.className = ERROR_CLASS_ID;
 
         drawShapesByR(r); // different logic intended
+    } else {
+        r_select.className = INVALID_CLASS_ID;
     }
 });
 
