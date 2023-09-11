@@ -34,12 +34,21 @@ function draw() {
         ctx.beginPath();
         ctx.moveTo(0, originY);
         ctx.lineTo(canvasWidth, originY);
+        // Draw the x-axis arrowhead
+        ctx.lineTo(canvasWidth - 5, originY - 5);
+        ctx.moveTo(canvasWidth, originY);
+        ctx.lineTo(canvasWidth - 5, originY + 5);
         ctx.stroke();
 
         // Draw the y-axis
         ctx.beginPath();
         ctx.moveTo(originX, 0);
         ctx.lineTo(originX, canvasHeight);
+        // Draw the y-axis arrowhead
+        ctx.moveTo(originX, 0);
+        ctx.lineTo(originX - 5, 5);
+        ctx.moveTo(originX, 0);
+        ctx.lineTo(originX + 5, 5);
         ctx.stroke();
 
         // Label the axes
@@ -47,8 +56,8 @@ function draw() {
         let fontArgs = ctx.font.split(' ');
         let newSize = '14px';
         ctx.font = newSize + ' ' + fontArgs[fontArgs.length - 1]; /// using the last part
-        ctx.fillText(xAxisLabel, canvas.width - 15, canvas.height / 2 - 5);
-        ctx.fillText(yAxisLabel, canvas.width / 2 + 5, 15);
+        ctx.fillText(xAxisLabel, canvas.width - 15, canvas.height / 2 - 8);
+        ctx.fillText(yAxisLabel, canvas.width / 2 + 8, 15);
 
         // Draw scale markings on the axes
         for (let i = -canvas.width / 2; i < canvas.width / 2; i += xAxisScale) {

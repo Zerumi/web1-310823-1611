@@ -46,14 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     }
 
     $executed_at = date(DATE_RFC2822);
-    $execution_time = microtime(1) - $start_exec;
+    $execution_time = (microtime(1) - $start_exec) * 1000;
 
     $response .= $x .= ";";
     $response .= $y .= ";";
     $response .= $r .= ";";
     $response .= $result .= ";";
     $response .= $executed_at .= ";";
-    $response .= $execution_time;
+    $response .= number_format($execution_time, 6) . " ms";
 
     echo $response;
 }
