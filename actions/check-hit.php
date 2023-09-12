@@ -6,6 +6,15 @@ $response = $x = $y = $r = $executed_at = $execution_time = $result = "";
 
 $start_exec = microtime(1);
 
+function containsNumberAfterDecimal($inputString): bool
+{
+    // Define a regular expression pattern that matches a decimal point followed by a number from 1 to 9.
+    $pattern = '/\.0+([1-9])/';
+
+    // Use preg_match() to check if the pattern exists in the inputString.
+    return preg_match($pattern, $inputString) === 1;
+}
+
 function check_x($x): bool
 {
     return $x >= -4 and $x <= 4;
@@ -13,11 +22,15 @@ function check_x($x): bool
 
 function check_y($y): bool
 {
+    if (str_contains($y, "3.") and containsNumberAfterDecimal($y)) return 0;
+    if (str_contains($y, "-5.") and containsNumberAfterDecimal($y)) return 0;
     return $y >= -5 and $y <= 3;
 }
 
 function check_r($r): bool
 {
+    if (str_contains($r, "5.") and containsNumberAfterDecimal($r)) return 0;
+    if (str_contains($r, "3.") and containsNumberAfterDecimal($r)) return 0;
     return $r >= 2 and $r <= 5;
 }
 
@@ -43,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $result = check_hit($x, $y, $r);
     } else {
         $result = "Ошибка введенных данных";
+        http_response_code(400);
     }
 
     $executed_at = date(DATE_RFC2822);

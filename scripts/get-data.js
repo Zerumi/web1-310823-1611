@@ -8,7 +8,7 @@ function getIsIntersects(select_x, select_y, select_r) {
         true);
     req.onreadystatechange = () => {
         if (req.readyState === 4) {
-            if (req.status === 200) {
+            if (req.status === 200 || req.status === 400) {
                 const values = req.responseText.split(';');
                 console.log("Got data! " + values);
                 addToTable(values[0], values[1], values[2], values[3], values[4], values[5]);

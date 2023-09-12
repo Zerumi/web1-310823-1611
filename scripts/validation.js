@@ -12,6 +12,14 @@ const r_select = document.getElementById("r-select");
 const y_error = y_select.nextElementSibling;
 const r_error = r_select.nextElementSibling;
 
+function containsNumberAfterDecimal(inputString) {
+    // Define a regular expression pattern that matches a decimal point followed by a number from 1 to 9.
+    const regex = /\.0+([1-9])/;
+
+    // Use the test() method of the regular expression to check if the pattern exists in the inputString.
+    return regex.test(inputString);
+}
+
 window.addEventListener("load", () => {
     const isValidY = y_select.value.length === 0 || !Number.isNaN(+y_select.value);
     y_select.className = isValidY ? VALID_CLASS_ID : INVALID_CLASS_ID;
@@ -25,8 +33,12 @@ window.addEventListener("load", () => {
 y_select.addEventListener("input", () => {
     const y = +y_select.value;
 
+    console.log(y_select.value.includes("3.") && containsNumberAfterDecimal(y_select.value));
+
     const isValid = y_select.value.length === 0 || y_select.value === "-"
-        || (!Number.isNaN(y) && y >= -5 && y <= 3);
+        || (!Number.isNaN(y) && y >= -5 && y <= 3)
+        && !(y_select.value.includes("3.") && containsNumberAfterDecimal(y_select.value))
+        && !(y_select.value.includes("-5.") && containsNumberAfterDecimal(y_select.value));
     if (isValid) {
         y_select.className = VALID_CLASS_ID;
         y_error.textContent = STRING_EMPTY;
@@ -40,7 +52,9 @@ r_select.addEventListener("input", () => {
     const r = +r_select.value;
 
     const isValid = r_select.value.length === 0 || y_select.value === "-"
-        || (!Number.isNaN(r) && r >= 2 && r <= 5);
+        || (!Number.isNaN(r) && r >= 2 && r <= 5)
+        && !(r_select.value.includes("2.") && containsNumberAfterDecimal(r_select.value))
+        && !(r_select.value.includes("5.") && containsNumberAfterDecimal(r_select.value));
     if (isValid) {
         r_select.className = VALID_CLASS_ID;
         r_error.textContent = STRING_EMPTY;
@@ -61,7 +75,9 @@ form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const isValidY = y_select.value.length === 0 || !Number.isNaN(y);
-    const isAcceptableY = y >= -5 && y <= 3;
+    const isAcceptableY = y >= -5 && y <= 3
+        && !(y_select.value.includes("3.") && containsNumberAfterDecimal(y_select.value))
+        && !(y_select.value.includes("-5.") && containsNumberAfterDecimal(y_select.value));
     if (!isValidY) {
         y_select.className = INVALID_CLASS_ID;
         y_error.textContent = "Expected as number, like -1";
@@ -77,7 +93,9 @@ form.addEventListener("submit", (event) => {
     }
 
     const isValidR = r_select.value.length === 0 || !Number.isNaN(r);
-    const isAcceptableR = r >= 2 && r <= 5;
+    const isAcceptableR = r >= 2 && r <= 5
+        && !(r_select.value.includes("2.") && containsNumberAfterDecimal(r_select.value))
+        && !(r_select.value.includes("5.") && containsNumberAfterDecimal(r_select.value));
     if (!isValidR) {
         r_select.className = INVALID_CLASS_ID;
         r_error.textContent = "Expected as number, like 3";
